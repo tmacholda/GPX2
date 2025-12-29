@@ -106,7 +106,7 @@ void GPX2Fusion::fusePartitions(vector<GPX2Structs::UnfeasibleConnection> &fuseW
 
                 // Apagar o último nó pois é onde ele se conecta na partição que será unida
                 if (!tmp.second.empty()) {
-                    tmp.second.erase(tmp.second.end());
+                    tmp.second.pop_back();
                 }
             }
 
@@ -303,7 +303,7 @@ bool GPX2Fusion::unfeasiblePartitionsConnected(GPX2Structs::PartitionMap &partit
                 nodesAlreadyChecked.push_back(connectedId);
             } else {
                 // Apaga por estar conectado com uma feasible
-                partitions[node.second]->getConnectedTo().erase(partitions[node.second]->getConnectedTo().end());
+                partitions[node.second]->getConnectedTo().pop_back();
             }
         }
     }

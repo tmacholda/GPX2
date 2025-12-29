@@ -74,9 +74,7 @@ void GPX2Support::cleanInsideAccess(GPX2Structs::PartitionMap &partitions, GPX2S
                     accessNodesAV.push_back(result.second.back());
 
                     result.second.erase(result.second.begin());
-                    result.second.erase(result.second.end());
-                    
-                    
+                    result.second.pop_back();
 
                     p.second->getNodes().insert(p.second->getNodes().end(),result.second.begin(), result.second.end());
                 }
