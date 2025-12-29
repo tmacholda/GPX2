@@ -337,3 +337,7 @@ vector<int> GAUtils::nearestNeighbor() {
 
     return tmp;
 }
+
+int GAUtils::sortPopulation(vector<int> &a, vector<int> &b){
+    return getFitness(a) < getFitness(b);
+}
